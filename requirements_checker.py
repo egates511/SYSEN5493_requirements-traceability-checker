@@ -211,7 +211,7 @@ def print_report(report: CheckReport) -> None:
 
     total_requirements = len(report.requirements)
 
-    print("Requirements Traceability Quality Report")
+    print("Requirements Traceability Validation Report")
     print("=" * 44)
     print(f"Total requirements: {total_requirements}")
     print()
