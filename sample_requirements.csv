@@ -1,0 +1,10 @@
+id,parent_id,text,status,verification_method,priority
+REQ-001,,System shall authenticate users.,approved,test,high
+REQ-002,REQ-001,Login page shall reject invalid passwords.,review,test,high
+REQ-003,REQ-001,Login page shall display an error message after failed login.,draft,inspection,medium
+REQ-004,REQ-999,This child has a missing parent reference.,approved,analysis,medium
+REQ-002,REQ-001,This row intentionally duplicates REQ-002.,review,demonstration,low
+,REQ-001,This row intentionally has a blank id.,draft,test,low
+REQ-006,, ,approved,inspection,low
+REQ-007,,This row intentionally has an invalid status.,released,test,medium
+REQ-008,,This row intentionally has an invalid verification method.,review,simulation,medium
