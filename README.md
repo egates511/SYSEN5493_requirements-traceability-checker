@@ -2,6 +2,8 @@
 Systems engineering projects often track requirements in spreadsheets. Mistakes like duplicate requirement IDs, missing verification methods, missing parent links, or incomplete statuses can break traceability. This tool reads a CSV file of requirements, checks for common traceability problems, and prints a clean summary report.
 # Requirements Traceability Checker
 
+[![CI](https://github.com/egates511/SYSEN5493_requirements-traceability-checker/actions/workflows/ci.yml/badge.svg)](https://github.com/egates511/SYSEN5493_requirements-traceability-checker/actions/workflows/ci.yml)
+
 A small Python command-line tool that checks a CSV file of systems engineering requirements for common traceability and data-quality problems.
 
 This project was built for SYSEN 5493 as a final project demonstrating AI-assisted coding, Git/GitHub workflow, testing, CI/CD, and responsible use of AI-generated code.
@@ -43,3 +45,4 @@ requirements-traceability-checker/
 └── .github/
     └── workflows/
         └── ci.yml
+
