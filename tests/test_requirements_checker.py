@@ -179,3 +179,35 @@ def test_missing_required_column_raises_clear_error(tmp_path: Path) -> None:
 
     with pytest.raises(RequirementsCheckerError, match="missing required column"):
         read_requirements(csv_path)
+
+"""Additional tests recommended by AI"""
+def test_missing_file_raises_clear_error(tmp_path: Path) -> None:
+    csv_path = tmp_path / "does_not_exist.csv"
+
+    with pytest.raises(RequirementsCheckerError, match="File not found"):
+        read_requirements(csv_path)
+
+def test_strips_whitespace_and_normalizes_allowed_values(tmp_path: Path) -> None:
+    csv_path = tmp_path / "normalized.csv"
+    write_csv(
+        csv_path,
+        [
+            {
+                "id": " REQ-001 ",
+                "parent_id": "",
+                "text": " Requirement text. ",
+                "status": " Approved ",
+                "verification_method": " TEST ",
+                "priority": " high ",
+            }
+        ],
+    )
+
+    report = check_requirements(read_requirements(csv_path))
+
+    assert report.issues == []
+    assert report.requirements[0].req_id == "REQ-001"
+    assert report.requirements[0].status == "approved"
+    assert report.requirements[0].verification_method == "test"
+
+"""End additional AI recommended tests"""
